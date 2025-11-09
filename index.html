@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game SFX Player</title>
   <style>
-    @keyframes rgbGlow {
-      0% { box-shadow: 0 0 15px #ff0000; border-color: #ff0000; }
-      25% { box-shadow: 0 0 15px #00ff00; border-color: #00ff00; }
-      50% { box-shadow: 0 0 15px #0000ff; border-color: #0000ff; }
-      75% { box-shadow: 0 0 15px #ff00ff; border-color: #ff00ff; }
-      100% { box-shadow: 0 0 15px #ff0000; border-color: #ff0000; }
+    @keyframes rgbBorder {
+      0% { border-color: #ff0000; box-shadow: 0 0 5px #ff0000; }
+      25% { border-color: #00ff00; box-shadow: 0 0 5px #00ff00; }
+      50% { border-color: #0000ff; box-shadow: 0 0 5px #0000ff; }
+      75% { border-color: #ff00ff; box-shadow: 0 0 5px #ff00ff; }
+      100% { border-color: #ff0000; box-shadow: 0 0 5px #ff0000; }
     }
 
     body {
       margin: 0;
-      background: linear-gradient(135deg, #050505, #0f0f0f);
+      background: #0b0b0b;
       color: #fff;
       font-family: "Poppins", sans-serif;
       display: flex;
@@ -30,46 +30,41 @@
     h1 {
       font-size: 2.4em;
       letter-spacing: 1px;
-      margin-bottom: 30px;
-      background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rgbGlow 6s infinite linear;
+      margin-bottom: 40px;
+      color: #fff;
     }
 
     #audioContainer {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
+      gap: 18px;
       width: 90%;
       max-width: 800px;
     }
 
     button {
-      background: #111;
-      border: 2px solid #fff;
+      background: transparent;
+      border: 2px solid #555;
       border-radius: 12px;
       padding: 14px 28px;
       color: #fff;
       font-weight: 600;
-      font-size: 1.1em;
+      font-size: 1.05em;
       cursor: pointer;
-      transition: all 0.2s ease;
-      animation: rgbGlow 6s infinite linear;
+      transition: all 0.3s ease;
+      position: relative;
     }
 
     button:hover {
-      transform: scale(1.08);
-      filter: brightness(1.3);
+      animation: rgbBorder 2s infinite linear;
+      transform: scale(1.05);
     }
 
     button.playing {
-      background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff00ff);
-      color: #111;
+      animation: rgbBorder 1.2s infinite linear;
+      transform: scale(1.08);
       font-weight: bold;
-      transform: scale(1.1);
-      transition: 0.2s;
     }
 
   </style>
